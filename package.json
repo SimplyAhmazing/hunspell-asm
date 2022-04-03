@@ -2,9 +2,8 @@
   "name": "hunspell-asm",
   "version": "4.0.2",
   "description": "WebAssembly based Javascript bindings for hunspell spellchecker",
-  "main": "./dist/cjs/index.js",
   "module": "./dist-esbuild/index.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist-esbuild/types/index.d.ts",
   "browser": {
     "./dist/cjs/lib/node/hunspell.js": "./dist/cjs/lib/browser/hunspell.js",
     "./dist/esm/lib/node/hunspell.js": "./dist/esm/lib/browser/hunspell.js"
@@ -81,7 +80,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "emscripten-wasm-loader": "github:simplyahmazing/emscripten-wasm-loader#5b282a5ce0566ff5f6c699a10c27130bf9382376",
+    "emscripten-wasm-loader": "github:simplyahmazing/emscripten-wasm-loader#b744d82db97dede077283573d526a6a7548df398",
     "esbuild": "^0.14.30",
     "nanoid": "^3.1.23"
   },

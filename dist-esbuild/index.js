@@ -269,7 +269,7 @@ var require_dist_esbuild = __commonJS({
     };
     var import_nanoid2 = __toESM2(require_nanoid());
     var mountBuffer2 = (FS3, memPathId) => (contents, fileName) => {
-      const file = fileName || (0, import_nanoid2.nanoid)(45);
+      const file = fileName || (0, import_nanoid2.default)(45);
       const mountedFilePath = `${memPathId}/${file}`;
       if (isMounted(FS3, mountedFilePath, "file")) {
         log2(`mountTypedArrayFile: file is already mounted, return it`);

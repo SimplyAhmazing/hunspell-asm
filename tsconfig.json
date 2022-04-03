@@ -10,7 +10,7 @@
     "noUnusedParameters": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
+    "declaration": true,
     "target": "es2018",
     "outDir": "dist",
     "lib": [
