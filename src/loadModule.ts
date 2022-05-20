@@ -1,11 +1,13 @@
-import { getModuleLoader } from 'emscripten-wasm-loader';
-import { HunspellAsmModule } from './HunspellAsmModule';
-import { HunspellFactory } from './HunspellFactory';
-import { hunspellLoader } from './hunspellLoader';
-import { log } from './util/logger';
+import { getModuleLoader } from "emscripten-wasm-loader";
+import { HunspellAsmModule } from "./HunspellAsmModule";
+import { HunspellFactory } from "./HunspellFactory";
+import { hunspellLoader } from "./hunspellLoader";
+import { log } from "./util/logger";
 
 //imports MODULARIZED emscripten preamble
-import * as runtime from './lib/node/hunspell';
+// import * as runtime from "./lib/node/hunspell";
+// import * as runtime from "./lib/browser/hunspell";
+import * as runtime from "./lib/browser/hunspell";
 
 /**
  * Load, initialize wasm binary to use actual hunspell wasm instances.
@@ -25,9 +27,18 @@ const loadModule = async (
   const { timeout } = initOptions;
   log(`loadModule: loading hunspell wasm binary`, { initOptions });
 
-  const moduleLoader = await getModuleLoader<HunspellFactory, HunspellAsmModule>(
-    (runtime: HunspellAsmModule) => hunspellLoader(runtime),
-    runtime,
+  const runtime_ = runtime.default;
+
+  console.log('[debug]', { runtime })
+  console.log('[debug]', runtime_)
+  debugger
+
+  const moduleLoader = await getModuleLoader<
+    HunspellFactory,
+    HunspellAsmModule
+  >(
+    (runtime_: HunspellAsmModule) => hunspellLoader(runtime_),
+    runtime_,
     undefined,
     { timeout }
   );

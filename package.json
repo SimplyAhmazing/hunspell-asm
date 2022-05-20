@@ -7,7 +7,7 @@
   "types": "./dist/types/index.d.ts",
   "browser": {
     "./dist/cjs/lib/node/hunspell.js": "./dist/cjs/lib/browser/hunspell.js",
-    "./dist/esm/lib/node/hunspell.js": "./dist/esm/lib/browser/hunspell.js"
+    "./dist/esm/lib/browser/hunspell.js": "./dist/esm/lib/browser/hunspell.js"
   },
   "config": {
     "commitizen": {
